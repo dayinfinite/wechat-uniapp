@@ -1,14 +1,18 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view class="text-area">
-			<text class="title">{{title}}</text>
-		</view>
+		<indexnav></indexnav>
+		<tab></tab>
 	</view>
 </template>
 
 <script>
+	import tab from '../../components/tab.vue'
+	import indexnav from '../../components/index-nav.vue'
 	export default {
+		components: {
+			tab,
+			indexnav
+		},
 		data() {
 			return {
 				title: 'Hello'
@@ -25,10 +29,10 @@
 
 <style>
 	.content {
-		display: flex;
+		/* display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
+		justify-content: center; */
 	}
 
 	.logo {

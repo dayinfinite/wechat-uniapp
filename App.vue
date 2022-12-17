@@ -14,4 +14,33 @@
 
 <style>
 	/*每个页面公共css */
+	@font-face {
+	  font-family: "iconfont"; /* Project id 3830608 */
+	  src: url('//at.alicdn.com/t/c/font_3830608_ht4zzjr18q5.woff2?t=1671279154874') format('woff2'),
+       url('//at.alicdn.com/t/c/font_3830608_ht4zzjr18q5.woff?t=1671279154874') format('woff'),
+       url('//at.alicdn.com/t/c/font_3830608_ht4zzjr18q5.ttf?t=1671279154874') format('truetype');
+	}
+	
+	@font-face {
+	  font-family: 'iconfont';  /* Project id 3830713 */
+	  src: url('//at.alicdn.com/t/c/font_3830713_wk8zg7v7ng.woff2?t=1671285388749') format('woff2'),
+	       url('//at.alicdn.com/t/c/font_3830713_wk8zg7v7ng.woff?t=1671285388749') format('woff'),
+	       url('//at.alicdn.com/t/c/font_3830713_wk8zg7v7ng.ttf?t=1671285388749') format('truetype');
+	}
+	
+	.iconfont {
+	  font-family: "iconfont" !important;
+	  font-size: 16px;
+	  font-style: normal;
+	  -webkit-font-smoothing: antialiased;
+	  -moz-osx-font-smoothing: grayscale;
+	}
+	
+	.icon-jiahao:before {
+	  content: "\e614";
+	}
+	.icon-sousuo:before {
+	  content: "\eafe";
+	}
+	
 </style>
