@@ -42,7 +42,7 @@
 	float: left;
 	width: 20%;
 	color: aliceblue;
-	background-color: black;
+	background-color: rgba(0,0,0,0);;
 	text-align: center;
 	height: 50px;
 	line-height: 50px;

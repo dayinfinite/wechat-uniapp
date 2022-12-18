@@ -1,6 +1,7 @@
 <template>
 	<view class="content">
 		<indexnav></indexnav>
+		<videolist :list="list"></videolist>
 		<tab></tab>
 	</view>
 </template>
@@ -8,21 +9,33 @@
 <script>
 	import tab from '../../components/tab.vue'
 	import indexnav from '../../components/index-nav.vue'
+	import videolist from '../../components/video-list.vue'
 	export default {
 		components: {
 			tab,
-			indexnav
+			indexnav,
+			videolist
 		},
 		data() {
 			return {
-				title: 'Hello'
+				title: 'Hello',
+				list: []
 			}
 		},
 		onLoad() {
-
+			this.getVideos()
 		},
 		methods: {
-
+			getVideos() {
+				var that=this;
+				uni.request({
+					url: "http://127.0.0.1:5080/videos.json",
+					success(res) {
+						that.list = res.data.list,
+						console.log(that.list)
+					}
+				})
+			}
 		}
 	}
 </script>
@@ -33,6 +46,8 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center; */
+		height: 100%;
+		width: 100%;
 	}
 
 	.logo {

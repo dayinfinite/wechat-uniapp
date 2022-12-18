@@ -1,0 +1,1 @@
+<view class="videoPlayer"><video class="video" src="{{video.src}}" controls="{{true}}"></video></view>

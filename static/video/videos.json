@@ -1,0 +1,40 @@
+{
+	"list": [
+		{
+			"id": 1,
+			"src": "http://127.0.0.1:5080/video1.mp4",
+			"author": "张三1",
+			"title": "视频1",
+			"likeCount": 123,
+			"commentCount": 123,
+			"shareCount": 123
+		},
+		{
+			"id": 2,
+			"src": "http://127.0.0.1:5080/video2.mp4",
+			"author": "张三2",
+			"title": "视频2",
+			"likeCount": 123,
+			"commentCount": 123,
+			"shareCount": 123
+		},
+		{
+			"id": 3,
+			"src": "http://127.0.0.1:5080/video3.mp4",
+			"author": "张三3",
+			"title": "视频3",
+			"likeCount": 123,
+			"commentCount": 123,
+			"shareCount": 123
+		},
+		{
+			"id": 4,
+			"src": "http://127.0.0.1:5080/video4.mp4",
+			"author": "张三4",
+			"title": "视频4",
+			"likeCount": 123,
+			"commentCount": 123,
+			"shareCount": 123
+		}
+	]
+}

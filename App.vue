@@ -13,6 +13,10 @@
 </script>
 
 <style>
+	html, body {
+		width: 100%;
+		height: 100%;
+	}
 	/*每个页面公共css */
 	@font-face {
 	  font-family: "iconfont"; /* Project id 3830608 */
