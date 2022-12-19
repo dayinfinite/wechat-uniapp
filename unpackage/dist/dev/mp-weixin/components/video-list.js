@@ -125,11 +125,23 @@ var videoplayer = function videoplayer() {
     return resolve(__webpack_require__(/*! ../components/videoplayer.vue */ 61));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
+var videolistleft = function videolistleft() {
+  __webpack_require__.e(/*! require.ensure | components/videolistleft */ "components/videolistleft").then((function () {
+    return resolve(__webpack_require__(/*! ../components/videolistleft.vue */ 68));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
+var videolistright = function videolistright() {
+  __webpack_require__.e(/*! require.ensure | components/videolistright */ "components/videolistright").then((function () {
+    return resolve(__webpack_require__(/*! ../components/videolistright.vue */ 75));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
 var _default = {
   name: "video-list",
   props: ["list"],
   components: {
-    videoplayer: videoplayer
+    videoplayer: videoplayer,
+    videolistleft: videolistleft,
+    videolistright: videolistright
   },
   data: function data() {
     return {

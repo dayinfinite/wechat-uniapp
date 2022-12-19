@@ -6,6 +6,12 @@
 					<view class="swiper-item" style="color: aliceblue;">
 						<videoplayer :video="item"></videoplayer>
 					</view>
+					<view class="listleft">
+						<videolistleft></videolistleft>
+					</view>
+					<view class="listright">
+						<videolistright></videolistright>
+					</view>
 				</swiper-item>
 			</swiper>
 		</view>
@@ -14,11 +20,15 @@
 
 <script>
 	import videoplayer from '../components/videoplayer.vue'
+	import videolistleft from '../components/videolistleft.vue'
+	import videolistright from '../components/videolistright.vue'
 	export default {
 		name:"video-list",
 		props: ["list"],
 		components: {
-			videoplayer
+			videoplayer,
+			videolistleft,
+			videolistright
 		},
 		data() {
 			return {
@@ -50,5 +60,17 @@
 .swiper-item {
 	height: 100%;
 	width: 100%;
+}
+.listleft {
+	z-index: 20;
+	position: absolute;
+	bottom: 50px;
+	left: 10px;
+}
+.listright {
+	z-index: 20;
+	position: absolute;
+	bottom: 50px;
+	right: 10px;
 }
 </style>
