@@ -13,6 +13,7 @@
 	width: 50px;
 	border-radius: 50%;
 	border: 2px solid aliceblue;
+	position: relative;
 }
 .right-box {
 	width: 50px;
@@ -34,6 +35,19 @@
 	        animation: rotate 1.5s linear 0.2s infinite;
 	height: 50px;
 	width: 50px;
+}
+.add {
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background-color: red;
+	position: absolute;
+	bottom: -9px;
+	left: 16px;
+	text-align: center;
+	line-height: 18px;
+	color: aliceblue;
+	font-size: 10px;
 }
 @-webkit-keyframes rotate {
 0% {

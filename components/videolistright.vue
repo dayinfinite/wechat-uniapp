@@ -2,12 +2,13 @@
 	<view class="listright">
 		<view class="author-img">
 			<image class="img" src="../static/logo.png" mode=""></image>
+			<view class="iconfont icon-jiahao add" v-show="show" @click="hidden"></view>
 		</view>
-		<view class="iconfont icon-anxin right-box"></view>
+		<view class="iconfont icon-anxin right-box" :style="anxincolor" @click="aixinColor"></view>
 		<view class="number">123</view>
 		<view class="iconfont icon-pinglun right-box"></view>
 		<view class="number">123</view>
-		<view class="iconfont icon-shoucang right-box"></view>
+		<view class="iconfont icon-shoucang right-box" :style="shoucangcolor" @click="shoucangColor"></view>
 		<view class="number">123</view>
 		<view class="iconfont icon-zhuanfa right-box"></view>
 		<view class="number">123</view>
@@ -22,8 +23,21 @@
 		name:"videolistright",
 		data() {
 			return {
-				
+				show: true,
+				anxincolor: 'color:white;',
+				shoucangcolor: 'color:white;'
 			};
+		},
+		methods: {
+			hidden() {
+				this.show = false
+			},
+			aixinColor() {
+				this.anxincolor = this.anxincolor==='color:white;'?'color:red;':'color:white;'
+			},
+			shoucangColor() {
+				this.shoucangcolor = this.shoucangcolor==='color:white;'?'color:yellow;':'color:white;'
+			}
 		}
 	}
 </script>
@@ -43,6 +57,7 @@
 	width: 50px;
 	border-radius: 50%;
 	border: 2px solid aliceblue;
+	position: relative;
 }
 .right-box {
 	width: 50px;
@@ -64,7 +79,19 @@
 	height: 50px;
 	width: 50px;
 }
-
+.add {
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background-color: red;
+	position: absolute;
+	bottom: -9px;
+	left: 16px;
+	text-align: center;
+	line-height: 18px;
+	color: aliceblue;
+	font-size: 10px;
+}
 @keyframes rotate {
 	0% {
 		transform: rotate(0deg);

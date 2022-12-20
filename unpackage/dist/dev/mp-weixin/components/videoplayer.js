@@ -114,7 +114,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
+/* WEBPACK VAR INJECTION */(function(uni) {
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -131,10 +131,41 @@ var _default = {
   name: "videoplayer",
   props: ['video'],
   data: function data() {
-    return {};
+    return {
+      playerStatus: false
+    };
+  },
+  onReady: function onReady() {
+    this.videoContext = uni.createVideoContext('myvideo', this);
+    console.log('aaa');
+  },
+  methods: {
+    player: function player() {
+      if (!this.playerStatus) {
+        this.videoContext.seek(0);
+        this.videoContext.play();
+        this.playerStatus = true;
+      }
+    },
+    pause: function pause() {
+      if (this.playerStatus) {
+        this.videoContext.pause();
+        this.playerStatus = false;
+      }
+    },
+    playerCurrent: function playerCurrent() {
+      if (!this.playerStatus) {
+        this.videoContext.play();
+        this.playerStatus = true;
+      } else {
+        this.videoContext.pause();
+        this.playerStatus = false;
+      }
+    }
   }
 };
 exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

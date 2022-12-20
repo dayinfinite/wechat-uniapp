@@ -139,10 +139,26 @@ exports.default = void 0;
 //
 //
 //
+//
 var _default = {
   name: "videolistright",
   data: function data() {
-    return {};
+    return {
+      show: true,
+      anxincolor: 'color:white;',
+      shoucangcolor: 'color:white;'
+    };
+  },
+  methods: {
+    hidden: function hidden() {
+      this.show = false;
+    },
+    aixinColor: function aixinColor() {
+      this.anxincolor = this.anxincolor === 'color:white;' ? 'color:red;' : 'color:white;';
+    },
+    shoucangColor: function shoucangColor() {
+      this.shoucangcolor = this.shoucangcolor === 'color:white;' ? 'color:yellow;' : 'color:white;';
+    }
   }
 };
 exports.default = _default;

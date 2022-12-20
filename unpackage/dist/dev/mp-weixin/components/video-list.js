@@ -135,6 +135,7 @@ var videolistright = function videolistright() {
     return resolve(__webpack_require__(/*! ../components/videolistright.vue */ 75));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
+var time = null;
 var _default = {
   name: "video-list",
   props: ["list"],
@@ -145,12 +146,46 @@ var _default = {
   },
   data: function data() {
     return {
-      videos: []
+      videos: [],
+      pagestartY: 0,
+      pageendY: 0,
+      page: 0
     };
   },
   watch: {
     list: function list() {
       this.videos = this.list;
+    }
+  },
+  methods: {
+    change: function change(res) {
+      var _this = this;
+      // console.log(res.detail.current)
+      this.page = res.detail.current;
+      clearTimeout(time);
+      time = setTimeout(function () {
+        if (_this.pagestartY < _this.pageendY) {
+          _this.$refs.player[_this.page].player();
+          _this.$refs.player[_this.page + 1].pause();
+          console.log("down");
+          _this.pagestartY = 0;
+          _this.pageendY = 0;
+        } else {
+          _this.$refs.player[_this.page].player();
+          _this.$refs.player[_this.page - 1].pause();
+          console.log("up");
+          _this.pagestartY = 0;
+          _this.pageendY = 0;
+        }
+      }, 1);
+    },
+    touchstart: function touchstart(res) {
+      this.pagestartY = res.changedTouches[0].pageY;
+      // console.log(this.pagestartY)
+    },
+    touchend: function touchend(res) {
+      this.pageendY = res.changedTouches[0].pageY;
+      // console.log(this.pageendY)
     }
   }
 };

@@ -35,9 +35,9 @@
 	/* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
 	@font-face {
 	  font-family: 'iconfont';  /* Project id 3830608 */
-	  src: url('//at.alicdn.com/t/c/font_3830608_imo7wk6kufd.woff2?t=1671471501234') format('woff2'),
-	       url('//at.alicdn.com/t/c/font_3830608_imo7wk6kufd.woff?t=1671471501234') format('woff'),
-	       url('//at.alicdn.com/t/c/font_3830608_imo7wk6kufd.ttf?t=1671471501234') format('truetype');
+	  src: url('//at.alicdn.com/t/c/font_3830608_igbh9iytftf.woff2?t=1671554069937') format('woff2'),
+	       url('//at.alicdn.com/t/c/font_3830608_igbh9iytftf.woff?t=1671554069937') format('woff'),
+	       url('//at.alicdn.com/t/c/font_3830608_igbh9iytftf.ttf?t=1671554069937') format('truetype');
 	}
 	
 	.iconfont {
@@ -55,13 +55,13 @@
 	  content: "\eafe";
 	}
 	.icon-anxin:before {
-	  content: "\e8ab";
+	  content: "\e6a1";
 	}
 	.icon-pinglun:before {
-		content: "\e615";
+		content: "\e63a";
 	}
 	.icon-shoucang:before {
-		content: "\e8b9";
+		content: "\e8bc";
 	}
 	.icon-zhuanfa:before {
 		content: "\e633";
