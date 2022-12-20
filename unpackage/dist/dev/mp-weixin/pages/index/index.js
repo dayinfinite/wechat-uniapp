@@ -177,7 +177,8 @@ var _default = {
       uni.request({
         url: "http://127.0.0.1:5080/videos.json",
         success: function success(res) {
-          that.list = res.data.list, console.log(that.list);
+          that.list = res.data.list;
+          // console.log(that.list)
         }
       });
     }

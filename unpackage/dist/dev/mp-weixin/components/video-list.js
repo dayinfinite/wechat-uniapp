@@ -167,13 +167,13 @@ var _default = {
         if (_this.pagestartY < _this.pageendY) {
           _this.$refs.player[_this.page].player();
           _this.$refs.player[_this.page + 1].pause();
-          console.log("down");
+          // console.log("down")
           _this.pagestartY = 0;
           _this.pageendY = 0;
         } else {
           _this.$refs.player[_this.page].player();
           _this.$refs.player[_this.page - 1].pause();
-          console.log("up");
+          // console.log("up")
           _this.pagestartY = 0;
           _this.pageendY = 0;
         }

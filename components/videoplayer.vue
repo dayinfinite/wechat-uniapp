@@ -16,7 +16,6 @@
 		},
 		onReady() {
 			this.videoContext = uni.createVideoContext('myvideo', this)
-			console.log('aaa')
 		},
 		methods: {
 			player() {

@@ -59,13 +59,13 @@
 					if(this.pagestartY < this.pageendY) {
 						this.$refs.player[this.page].player()
 						this.$refs.player[this.page + 1].pause()
-						console.log("down")
+						// console.log("down")
 						this.pagestartY=0
 						this.pageendY=0
 					} else {
 						this.$refs.player[this.page].player()
 						this.$refs.player[this.page - 1].pause()
-						console.log("up")
+						// console.log("up")
 						this.pagestartY=0
 						this.pageendY=0
 					}

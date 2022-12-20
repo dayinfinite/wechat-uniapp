@@ -137,7 +137,6 @@ var _default = {
   },
   onReady: function onReady() {
     this.videoContext = uni.createVideoContext('myvideo', this);
-    console.log('aaa');
   },
   methods: {
     player: function player() {
