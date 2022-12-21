@@ -1,1 +1,1 @@
-<view class="videolistleft"><view class="author">张三</view><view class="title1">抖音，记录美好生活</view><view class="box"><view class="music">@抖音，记录美好生活@抖音，记录美好生活</view></view></view>
+<view class="videolistleft"><view class="author">{{''+video.author+''}}</view><view class="title1">{{''+video.title+''}}</view><view class="box"><view class="music">@抖音，记录美好生活@抖音，记录美好生活</view></view></view>

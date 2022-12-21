@@ -8,15 +8,15 @@
 			@touchstart="touchstart"
 			@touchend="touchend"
 			>
-				<swiper-item v-for="item of videos" :key="item.key">
+				<swiper-item v-for="(item, index) of videos" :key="item.key">
 					<view class="swiper-item" style="color: aliceblue;">
-						<videoplayer ref="player" :video="item"></videoplayer>
+						<videoplayer @changeclick="changeClick" ref="player" :video="item" :index="index"></videoplayer>
 					</view>
 					<view class="listleft">
-						<videolistleft></videolistleft>
+						<videolistleft :video="item"></videolistleft>
 					</view>
 					<view class="listright">
-						<videolistright></videolistright>
+						<videolistright :video="item" ref="right"></videolistright>
 					</view>
 				</swiper-item>
 			</swiper>
@@ -52,20 +52,17 @@
 		},
 		methods: {
 			change(res) {
-				// console.log(res.detail.current)
 				this.page = res.detail.current
 				clearTimeout(time)
 				time=setTimeout(()=> {
 					if(this.pagestartY < this.pageendY) {
 						this.$refs.player[this.page].player()
 						this.$refs.player[this.page + 1].pause()
-						// console.log("down")
 						this.pagestartY=0
 						this.pageendY=0
 					} else {
 						this.$refs.player[this.page].player()
 						this.$refs.player[this.page - 1].pause()
-						// console.log("up")
 						this.pagestartY=0
 						this.pageendY=0
 					}
@@ -74,11 +71,12 @@
 			},
 			touchstart(res) {
 				this.pagestartY = res.changedTouches[0].pageY
-				// console.log(this.pagestartY)
 			},
 			touchend(res) {
 				this.pageendY = res.changedTouches[0].pageY
-				// console.log(this.pageendY)
+			},
+			changeClick() {
+				this.$refs.right[this.page].change()
 			}
 		}
 	}

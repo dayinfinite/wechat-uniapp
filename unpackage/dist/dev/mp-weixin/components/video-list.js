@@ -160,20 +160,17 @@ var _default = {
   methods: {
     change: function change(res) {
       var _this = this;
-      // console.log(res.detail.current)
       this.page = res.detail.current;
       clearTimeout(time);
       time = setTimeout(function () {
         if (_this.pagestartY < _this.pageendY) {
           _this.$refs.player[_this.page].player();
           _this.$refs.player[_this.page + 1].pause();
-          // console.log("down")
           _this.pagestartY = 0;
           _this.pageendY = 0;
         } else {
           _this.$refs.player[_this.page].player();
           _this.$refs.player[_this.page - 1].pause();
-          // console.log("up")
           _this.pagestartY = 0;
           _this.pageendY = 0;
         }
@@ -181,11 +178,12 @@ var _default = {
     },
     touchstart: function touchstart(res) {
       this.pagestartY = res.changedTouches[0].pageY;
-      // console.log(this.pagestartY)
     },
     touchend: function touchend(res) {
       this.pageendY = res.changedTouches[0].pageY;
-      // console.log(this.pageendY)
+    },
+    changeClick: function changeClick() {
+      this.$refs.right[this.page].change();
     }
   }
 };

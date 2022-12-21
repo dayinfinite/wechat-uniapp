@@ -1,17 +1,22 @@
 <template>
 	<view class="videoPlayer">
-		<video id="myvideo" class="video" :src="video.src" :controls="true" @click="playerCurrent">
+		<video id="myvideo" class="video" :src="video.src" :controls="true" 
+		:autoplay="autoplay"
+		@click="playerCurrent">
 		</video>
 	</view>
 </template>
 
 <script>
+	var timer = null
 	export default {
 		name:"videoplayer",
-		props: ['video'],
+		props: ['video', 'index'],
 		data() {
 			return {
-				playerStatus: false
+				playerStatus: false,
+				dbclick: false,
+				autoplay: false
 			};
 		},
 		onReady() {
@@ -32,14 +37,31 @@
 				}
 			},
 			playerCurrent() {
-				if(!this.playerStatus) {
-					this.videoContext.play()
-					this.playerStatus = true
-				} else {
-					this.videoContext.pause()
-					this.playerStatus = false
+				clearTimeout(timer)
+				this.dbclick = !this.dbclick
+				timer=setTimeout(() => {
+					if(this.dbclick) {
+						if(!this.playerStatus) {
+							this.videoContext.play()
+							this.playerStatus = true
+						} else {
+							this.videoContext.pause()
+							this.playerStatus = false
+						}
+					} else {
+						this.$emit('changeclick')
+					}
+					this.dbclick = false
+				}, 300)
+			},
+			auto() {
+				if(this.index === 0) {
+					this.autoplay=true
 				}
 			}
+		},
+		created() {
+			this.auto()
 		}
 	}
 </script>

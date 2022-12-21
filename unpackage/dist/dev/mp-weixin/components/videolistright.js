@@ -142,6 +142,7 @@ exports.default = void 0;
 //
 var _default = {
   name: "videolistright",
+  props: ["video"],
   data: function data() {
     return {
       show: true,
@@ -158,6 +159,9 @@ var _default = {
     },
     shoucangColor: function shoucangColor() {
       this.shoucangcolor = this.shoucangcolor === 'color:white;' ? 'color:yellow;' : 'color:white;';
+    },
+    change: function change() {
+      this.anxincolor = "color:red;";
     }
   }
 };

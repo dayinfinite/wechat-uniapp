@@ -127,12 +127,18 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+
+var timer = null;
 var _default = {
   name: "videoplayer",
-  props: ['video'],
+  props: ['video', 'index'],
   data: function data() {
     return {
-      playerStatus: false
+      playerStatus: false,
+      dbclick: false,
+      autoplay: false
     };
   },
   onReady: function onReady() {
@@ -153,14 +159,32 @@ var _default = {
       }
     },
     playerCurrent: function playerCurrent() {
-      if (!this.playerStatus) {
-        this.videoContext.play();
-        this.playerStatus = true;
-      } else {
-        this.videoContext.pause();
-        this.playerStatus = false;
+      var _this = this;
+      clearTimeout(timer);
+      this.dbclick = !this.dbclick;
+      timer = setTimeout(function () {
+        if (_this.dbclick) {
+          if (!_this.playerStatus) {
+            _this.videoContext.play();
+            _this.playerStatus = true;
+          } else {
+            _this.videoContext.pause();
+            _this.playerStatus = false;
+          }
+        } else {
+          _this.$emit('changeclick');
+        }
+        _this.dbclick = false;
+      }, 300);
+    },
+    auto: function auto() {
+      if (this.index === 0) {
+        this.autoplay = true;
       }
     }
+  },
+  created: function created() {
+    this.auto();
   }
 };
 exports.default = _default;

@@ -5,13 +5,13 @@
 			<view class="iconfont icon-jiahao add" v-show="show" @click="hidden"></view>
 		</view>
 		<view class="iconfont icon-anxin right-box" :style="anxincolor" @click="aixinColor"></view>
-		<view class="number">123</view>
+		<view class="number">{{video.likeCount}}</view>
 		<view class="iconfont icon-pinglun right-box"></view>
-		<view class="number">123</view>
+		<view class="number">{{video.commentCount}}</view>
 		<view class="iconfont icon-shoucang right-box" :style="shoucangcolor" @click="shoucangColor"></view>
-		<view class="number">123</view>
+		<view class="number">{{video.saveCount}}</view>
 		<view class="iconfont icon-zhuanfa right-box"></view>
-		<view class="number">123</view>
+		<view class="number">{{video.shareCount}}</view>
 		<view class="around">
 			<image class="img" src="../static/logo.png" mode=""></image>
 		</view>
@@ -21,6 +21,7 @@
 <script>
 	export default {
 		name:"videolistright",
+		props: ["video"],
 		data() {
 			return {
 				show: true,
@@ -37,6 +38,9 @@
 			},
 			shoucangColor() {
 				this.shoucangcolor = this.shoucangcolor==='color:white;'?'color:yellow;':'color:white;'
+			},
+			change() {
+				this.anxincolor = "color:red;"
 			}
 		}
 	}

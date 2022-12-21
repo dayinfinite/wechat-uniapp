@@ -1,10 +1,10 @@
 <template>
 	<view class="videolistleft">
 		<view class="author">
-			张三
+			{{video.author}}
 		</view>
 		<view class="title1">
-			抖音，记录美好生活
+			{{video.title}}
 		</view>
 		<view class="box">
 			<view class="music">
@@ -17,6 +17,7 @@
 <script>
 	export default {
 		name:"videolistleft",
+		props: ["video"],
 		data() {
 			return {
 				

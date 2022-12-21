@@ -138,6 +138,7 @@ exports.default = void 0;
 //
 var _default = {
   name: "videolistleft",
+  props: ["video"],
   data: function data() {
     return {};
   }

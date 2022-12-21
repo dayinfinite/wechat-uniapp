@@ -1,1 +1,1 @@
-<view class="videoPlayer"><video class="video" id="myvideo" src="{{video.src}}" controls="{{true}}" data-event-opts="{{[['tap',[['playerCurrent',['$event']]]]]}}" bindtap="__e"></video></view>
+<view class="videoPlayer"><video class="video" id="myvideo" src="{{video.src}}" controls="{{true}}" autoplay="{{autoplay}}" data-event-opts="{{[['tap',[['playerCurrent',['$event']]]]]}}" bindtap="__e"></video></view>
